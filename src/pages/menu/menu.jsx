@@ -1,6 +1,8 @@
+//dito yung React component para sa menu page
+
 import { useEffect, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
-import "../styles/menu.css"
+import "./menu.css"
 
 export default function Menu() {
   const navigate = useNavigate()
