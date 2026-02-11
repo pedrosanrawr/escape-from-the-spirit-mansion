@@ -70,29 +70,53 @@ export const LEVELS = {
     name: "Level 2",
 
     spawn: { x: 60, y: 560 },
-    groundSegments: [{ x: 0, w: WORLD_W }],
+    groundSegments: [
+      { x: 0, w: 970 },
+      { x: 1180, w: 1450 },
+      { x: 2800, w: 1800 },
+      { x: 4800, w: 1200 },
+    ],
 
     platforms: [
-      { x: 500, y: 640, w: 200, h: 18 },
+      { x: 1380, y: 650, w: 130, h: 70 },
+      { x: 1780, y: 620, w: 130, h: 100 },
+      { x: 2280, y: 680, w: 130, h: 40 },
+
+      { x: 3050, y: 680, w: 360, h: 40 },
+      { x: 3520, y: 560, w: 400, h: 20 },
+      { x: 3980, y: 460, w: 400, h: 20 },
+
+      { x: 4560, y: 420, w: 220, h: 20 },
     ],
 
     enemies: [
-      { type: "walker", x: 500 },
-      { type: "chaser", x: 1300 },
+      { type: "walker", x: 520, patrol: { minX: 220, maxX: 920 } },
+      { type: "chaser", x: 820 },
+      { type: "walker", x: 1535, patrol: { minX: 1180, maxX: 1750 } },
+      { type: "walker", x: 1780, patrol: { minX: 1780, maxX: 1910 }, platformTopY: 620 },
+      { type: "chaser", x: 2050 },
+      { type: "walker", x: 2335, patrol: { minX: 1935, maxX: 2295 } },
+      { type: "walker", x: 3450, patrol: { minX: 3000, maxX: 3650 } },
+      { type: "walker", x: 3520, patrol: { minX: 3520, maxX: 3920 }, platformTopY: 560 },
+      { type: "walker", x: 3980, patrol: { minX: 3980, maxX: 4380 }, platformTopY: 460 },
+      { type: "chaser", x: 4400 },
+      { type: "walker", x: 4560, patrol: { minX: 4560, maxX: 4780 }, platformTopY: 420 },
     ],
 
     pickups: [
-      { type: "sword", x: 520, y: 600, w: 26, h: 26 },
+      { type: "mushroom", x: 1450, y: 520, w: 26, h: 26 },
+      { type: "sword", x: 4660, y: 390, w: 26, h: 26 },
     ],
 
     goal: { x: 5600, y: 620, w: 44, h: 70 },
     boss: {
       type: "swordsman",
       x: 5200,
-      y: 590,
+      y: 630,
       w: 90,
       h: 90,
-      maxHp: 18,
+      maxHp: 26,
+      patrol: { minX: 4900, maxX: 5550 },
     }
   },
 
