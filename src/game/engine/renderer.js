@@ -22,7 +22,9 @@ export function render(p, state) {
 
   for (const en of state.enemies) {
     if (!en.alive && en.squashFrames <= 0) continue;
-    p.fill(200, 150, 90);
+    if (en.type === "chaser") p.fill(255, 170, 70);
+    else if (en.type === "flyer") p.fill(170, 120, 255);
+    else p.fill(200, 150, 90);
     if (!en.alive) {
       p.rect(en.x - state.cameraX, en.y + en.h * 0.6, en.w, en.h * 0.4, 6);
     } else {
